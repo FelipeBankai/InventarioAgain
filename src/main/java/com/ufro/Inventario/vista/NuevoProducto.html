@@ -5,9 +5,86 @@
 </head>
 <body>
     <script type="text/javascript">
-        function captura(){
+        function captura() {
             var Product = document.getElementById('nombreProduct').value;
-            alert(Product)
+            var Tip = document.getElementById('tipoP').value;
+            var Cantida = document.getElementById('cantidadP').value;
+            var Descrip = document.getElementById('descripcionP').value;
+
+            var body = document.getElementsByTagName("body")[0];
+
+            var tabla   = document.createElement("table");
+            var tblBody = document.createElement("tbody");
+            for (var i = 0; i < 2; i++) {
+                var hilera = document.createElement("tr");
+
+                for (var j = 0; j < 2; j++) {
+                    var resultado="";
+                    if (i==0 & j==0){
+                        resultado = Product;
+                    }
+                    if (i==0 & j==1){
+                        resultado = Tip;
+                    }
+                    if (i==1 & j==0){
+                        resultado = Cantida;
+                    }
+                    if (i==1 & j==1){
+                        resultado = Descrip;
+                    }
+                    var celda = document.createElement("td");
+                    var textoCelda = document.createTextNode(resultado);
+                    celda.appendChild(textoCelda);
+                    hilera.appendChild(celda);
+                }
+
+                tblBody.appendChild(hilera);
+            }
+
+            tabla.appendChild(tblBody);
+            body.appendChild(tabla);
+            tabla.setAttribute("border", "2");
+
+        }
+        function eliminarProducto(){
+
+            var Product = document.getElementById('nombreProduct').value;
+            var Tip = document.getElementById('tipoP').value;
+            var Cantida = document.getElementById('cantidadP').value;
+            var Descrip = document.getElementById('descripcionP').value;
+            var body = document.getElementsByTagName("body")[0];
+
+            var tabla   = document.createElement("table");
+            var tblBody = document.createElement("tbody");
+            for (var i = 0; i < 2; i++) {
+                var hilera = document.createElement("tr");
+
+                for (var j = 0; j < 2; j++) {
+                    var resultado="";
+                    if (i==0 & j==0){
+                        resultado = Product;
+                    }
+                    if (i==0 & j==1){
+                        resultado = Tip;
+                    }
+                    if (i==1 & j==0){
+                        resultado = Cantida;
+                    }
+                    if (i==1 & j==1){
+                        resultado = Descrip;
+                    }
+                    var celda = document.createElement("td");
+                    var textoCelda = document.removeChild(resultado);
+                    celda.appendChild(textoCelda);
+                    hilera.appendChild(celda);
+                }
+
+                tblBody.appendChild(hilera);
+            }
+
+            tabla.appendChild(tblBody);
+            body.appendChild(tabla);
+            tabla.setAttribute("border", "2");
         }
     </script>
 
@@ -16,7 +93,7 @@
     </div>
 
     <div>
-        <label>Creación de productos</label>
+        <label>Creacion de productos</label>
     </div>
 
     <form name=form action="" method="get">
@@ -26,64 +103,55 @@
         </div>
 
         <div>
-            Tipo de producto: <input type="text" name="tipoProducto">
+            Tipo de producto: <input type="text" name="tipoProducto" id="tipoP">
         </div>
 
         <div>
-            <input type="button" value ="Captura" onclick=" captura()">
+            Cantidad del producto: <input type="text" name="cantidadProducto" id="cantidadP">
+        </div>
+
+        <div>
+            Descripcion del producto:
+        </div>
+
+        <div>
+            <textarea name="comentario" rows="5" id ="descripcionP"cols="50" style="width: 502px; height: 85px;"></textarea>
+        </div>
+
+        <div>
+            <input type="button" value ="Guardar Producto" onclick=" captura()">
+            <input type="button" value ="Quitar Producto" onclick=" eliminarProducto()">
         </div>
     </form>
-
-
-
-</body>
-<!--<body>
-<script>src="FuncionProducto.js"</script>
-<div class="pure-g-r" id="layout">
-    <div class="pure-u-1" id="main">
-        <div class="header">
-            <h1>Inventario</h1>
-        </div>
-
-
-        <div class="content">
-            <h2 class="content-subhead">Creacion de productos</h2>
-        </div>
-
-    </div>
-    <FORM name=form action="" method="post">
-
-        <p>
-            Nombre del producto: <input type="text" name="nombreProducto" id="nombreProducto">
-        </p>
-        <p>
-           Tipo de producto: <input type="text" name="tipoProducto">
-        </p>
-        <p>
-            Cantidad del producto: <input type="text" name="cantidadProducto">
-        </p>
-        <p>
-            Descripcion de producto:
-        </p>
-        <p>
-
-            <textarea name="comentario" rows="5" cols="50" style="width: 502px; height: 85px;"></textarea>
-
-        </p>
-        <p>
-            <input type="button" value ="Captura" onclick=" captura()">
-        </p>
-
-    </form>
-
-
-        <div class="footer pure-u-1">
+    <div class="footer pure-u-1">
         <ul class="pure-paginator">
             <li><a class="pure-button" href="InventarioVista.html">Inicio</a></li>
         </ul>
     </div>
-</div>
-</body>-->
+    <table id="table-2" class="table table-hover ">
+        <style>
+            .table-wrapper-scroll-y {
+                display: block;
+                max-height: 250px;
+                overflow-y: auto;
+                -ms-overflow-style: -ms-autohiding-scrollbar;
+            }
+        </style>
+        <thead>
+        <tr class="filters">
+            <th><input type="text" class="form-control" placeholder="Nombre" disabled></th>
+            <th><input type="text" class="form-control" placeholder="Tipo" disabled></th>
+            <th><input type="text" class="form-control" placeholder="Cantidad" disabled></th>
+            <th><input type="text" class="form-control" placeholder="Descripcion" disabled></th>
+        </tr>
+        </thead>
+        <tbody id="tablita">
+
+        </tbody>
+    </table>
+
+
+</body>
 </html>
 
 </html>

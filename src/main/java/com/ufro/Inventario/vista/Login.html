@@ -45,15 +45,14 @@
   <FORM name=form action="InventarioVista.html" method="get">
     <table>
       <SCRIPT  language=JavaScript>
-        function go(){
+        function ingresar(){
 
-          if (document.form.clave.value=='123' && document.form.user.value=='user'){
+          if (document.form.clave.value == '123' && document.form.user.value == 'user') {
 
             document.form.submit();
 
 
-          }
-          else{
+          } else {
             alert("Porfavor ingrese, nombre de usuario y clave correcta");
           }
         }
@@ -63,7 +62,7 @@
       <tr><td><INPUT type="text" name="user"/></td></tr>
       <tr><td><label>Password</label></td></tr>
       <tr><td><INPUT type="password" name="clave" /> </td></tr>
-      <tr><td><INPUT onclick=go() type=button value=Entrar /> </td></tr>
+      <tr><td><INPUT onclick=ingresar() type=button value=Entrar /> </td></tr>
 
 
 
