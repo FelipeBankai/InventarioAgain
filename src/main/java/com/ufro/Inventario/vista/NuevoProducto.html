@@ -1,0 +1,89 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>Ventas e Inventario</title>
+</head>
+<body>
+    <script type="text/javascript">
+        function captura(){
+            var Product = document.getElementById('nombreProduct').value;
+            alert(Product)
+        }
+    </script>
+
+    <div>
+        <label>Inventario</label>
+    </div>
+
+    <div>
+        <label>Creación de productos</label>
+    </div>
+
+    <form name=form action="" method="get">
+
+        <div>
+            Nombre del producto: <input type="text" name="nombreProduct" id="nombreProduct">
+        </div>
+
+        <div>
+            Tipo de producto: <input type="text" name="tipoProducto">
+        </div>
+
+        <div>
+            <input type="button" value ="Captura" onclick=" captura()">
+        </div>
+    </form>
+
+
+
+</body>
+<!--<body>
+<script>src="FuncionProducto.js"</script>
+<div class="pure-g-r" id="layout">
+    <div class="pure-u-1" id="main">
+        <div class="header">
+            <h1>Inventario</h1>
+        </div>
+
+
+        <div class="content">
+            <h2 class="content-subhead">Creacion de productos</h2>
+        </div>
+
+    </div>
+    <FORM name=form action="" method="post">
+
+        <p>
+            Nombre del producto: <input type="text" name="nombreProducto" id="nombreProducto">
+        </p>
+        <p>
+           Tipo de producto: <input type="text" name="tipoProducto">
+        </p>
+        <p>
+            Cantidad del producto: <input type="text" name="cantidadProducto">
+        </p>
+        <p>
+            Descripcion de producto:
+        </p>
+        <p>
+
+            <textarea name="comentario" rows="5" cols="50" style="width: 502px; height: 85px;"></textarea>
+
+        </p>
+        <p>
+            <input type="button" value ="Captura" onclick=" captura()">
+        </p>
+
+    </form>
+
+
+        <div class="footer pure-u-1">
+        <ul class="pure-paginator">
+            <li><a class="pure-button" href="InventarioVista.html">Inicio</a></li>
+        </ul>
+    </div>
+</div>
+</body>-->
+</html>
+
+</html>
